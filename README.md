@@ -99,7 +99,7 @@ git push -u personal new-feature-branch
 
 Replace `new-feature-branch` with the name of your branch.
 
-## 10. Verify the Push
+### 10. Verify the Push
 
 To confirm your push was successful, check the remote branches:
 
