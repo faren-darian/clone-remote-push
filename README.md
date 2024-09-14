@@ -61,3 +61,48 @@ To check if your branch is tracking the remote branch correctly:
 ```bash
 git status
 ```
+# CREATE AN SSH KEY - REFER TO THE "Generate a New SSH Key Pair" SECTION FOR INSTRUCTION
+
+### 6. Add Your Personal GitHub as a Remote
+
+```bash
+git remote add personal git@github.com:your-username/your-repo-name.git
+```
+
+Replace `your-username` and `your-repo-name` with your actual GitHub username and repository name.
+
+### 7. Verify Remote Repositories
+
+Check your existing remotes:
+
+```bash
+git remote -v
+```
+
+### 8. Update Remote URL (If Necessary)
+
+If the remote doesn't show the correct username and repository name, if it does show the correct username and repository name, then skip this step:
+
+```bash
+git remote set-url personal git@github.com:your-username/your-actual-repo-name.git
+```
+
+Replace `your-username` and `your-actual-repo-name` with the correct information.
+
+### 9. Push to Your Personal GitHub
+
+Push your new branch to your personal GitHub account:
+
+```bash
+git push -u personal new-feature-branch
+```
+
+Replace `new-feature-branch` with the name of your branch.
+
+## 10. Verify the Push
+
+To confirm your push was successful, check the remote branches:
+
+```bash
+git branch -r
+```
