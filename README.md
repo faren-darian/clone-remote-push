@@ -27,6 +27,7 @@ cd repository-name
 ```
 
 Replace `repository-name` with the actual name of the cloned repository.
+You can find it from the cloned respository:git clone https://github.com/source-username/repository-name.git
 
 ### 3. (Optional) Start Fresh
 
