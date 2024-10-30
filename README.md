@@ -1,4 +1,4 @@
-# How to Clone a GitHub Repository and Push it
+# How to Clone a GitHub Repository with Terminal
 This guide will walk you through the process of cloning a repository from one GitHub account using HTTPS, and then pushing it to another GitHub account using an SSH key.
 
 ## Prerequisites
