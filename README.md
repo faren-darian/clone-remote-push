@@ -122,7 +122,7 @@ git branch -r
 ```
 
 
-- If you want to remote a repository on github through SSH and save changes that you made in vscode, follow the below steps:
+## If you want to remote a repository on github through SSH and save changes that you made in vscode, follow the below steps:
 
 | Step |              What to Do             |                               Command to Run                              |              What It Means             |
 |:----:|:-----------------------------------:|:-------------------------------------------------------------------------:|:--------------------------------------:|
