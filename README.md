@@ -65,11 +65,25 @@ git status
 
 ### 6. Add Your Personal GitHub as a Remote
 
+***You only need to set the remote once per repository.***
+
 ```bash
 git remote add personal git@github.com:your-username/your-repo-name.git
 ```
 
 Replace `your-username` and `your-repo-name` with your actual GitHub username and repository name.
+
+- If you want to remote a repository on github and save changes that you made in vscode:
+- 
+```bash
+git remote set-url origin git@github.com:your-username/your-repo-name.git
+```
+
+|             Command             |                     What it does                     |                            Used when                            |
+|:-------------------------------:|:----------------------------------------------------:|:---------------------------------------------------------------:|
+| `git remote add [name] [url] `    | Adds a new remote (with a custom name like `personal`) | You want to keep multiple remotes                               |
+|`git remote set-url origin [url] `| Changes the existing `origin` remote URL               | You want to switch the existing remote (e.g. from HTTPS to SSH) |
+
 
 ### 7. Verify Remote Repositories
 
@@ -81,7 +95,7 @@ git remote -v
 
 ### 8. Update Remote URL (If Necessary)
 
-If the remote doesn't show the correct username and repository name, if it does show the correct username and repository name, then skip this step:
+If the remote doesn't show the correct username and repository name, (if it does show the correct username and repository name, then skip this step):
 
 ```bash
 git remote set-url personal git@github.com:your-username/your-actual-repo-name.git
@@ -105,4 +119,51 @@ To confirm your push was successful, check the remote branches:
 
 ```bash
 git branch -r
+```
+
+
+- If you want to remote a repository on github through SSH and save changes that you made in vscode, follow the below steps:
+
+| Step |              What to Do             |                               Command to Run                              |              What It Means             |
+|:----:|:-----------------------------------:|:-------------------------------------------------------------------------:|:--------------------------------------:|
+|0 |check status|`git status`||
+|0| Test SSH connection| `ssh -T git@github.com`||
+| 1️⃣    | Clone the repo using **SSH**                 | `git clone git@github.com:your-username/your-repo-name.git`                 | Copy your GitHub repo to your computer (Bringing the project to your local machine) |
+|Do the 🔄 step to remote |   |||
+| 2️⃣    | Go into the folder                  | `cd your-repo-name `                                                        | Move into the project directory        |
+| 3️⃣    | Open in VS Code                     | `code .`                                                                    | Open the current folder in VS Code     |
+| 4️⃣    | Make changes in files               | (Use VS Code)                                                             | Edit .ipynb, .py, .md, etc.            |
+| 5️⃣    | Check changes                       | `git status`                                                                | See which files were changed           |
+| 6️⃣    | Stage changes                       | `git add . `                                                                | Add all changed files (**stage** your changes)                 |
+| 7️⃣    | Commit changes                      | `git commit -m "your message"  `                                            | Save a version with a message locally         |
+| 8️⃣    | Push to GitHub                      | `git push origin main     `                                                 | Send your changes to GitHub            |
+| 🔄    | If you cloned with HTTPS by mistake |` git remote set-url origin git@github.com:your-username/your-repo-name.git` | Fix it to use SSH (no password needed) |
+| 🔎    | Check current remote                |` git remote -v      `                                                       | See if it's SSH or HTTPS               |
+
+🧠 Think of it like this:
+SSH key = 🔐 Your house key to GitHub
+
+Clone = 📦 Bringing the project to your computer
+
+Remote = 📡 Git remembers where the repo lives online
+
+Push/pull = 🔁 Send/receive updates
+
+## So What Do You Do Next Time?
+Just:
+
+1. Open your repo folder in VS Code:
+
+```bash
+cd your-repo-name
+code .
+```
+2. Make your changes
+
+3. Run:
+
+```bash
+git add .
+git commit -m "your update message"
+git push origin main
 ```
